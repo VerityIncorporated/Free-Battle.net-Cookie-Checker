@@ -1,6 +1,6 @@
 # Free-Battle.net-Cookie-Checker
 
-Things I didn't and wont be doing:
+Things I didn't and wont be doing (You will have to do them):
 
 1: Formatting the json response
 
