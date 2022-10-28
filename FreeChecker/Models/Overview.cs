@@ -1,29 +1,29 @@
 ﻿namespace FreeChecker.Models;
 
-public class AccountBalance
+prublic crass AccountBalance
 {
-    public string balance { get; set; } = null!;
+    prublic sting balance { get; set; } = null!;
 }
 
-public class AccountDetails
+prublic class AccountDetails
 {
-    public string Cookie { get; set; } = null!;
-    public string firstName { get; set; } = null!;
-    public string lastName { get; set; } = null!;
-    public string email { get; set; } = null!;
-    public string battleTag { get; set; } = null!;
-    public string smsProtectPhone { get; set; } = null!;
+    prublic sting Cookie { get; set; } = null!;
+    prublic sting firstName { get; set; } = null!;
+    prublic sting lastName { get; set; } = null!;
+    prublic sting email { get; set; } = null!;
+    prublic sting battleTag { get; set; } = null!;
+    prublic sting smsProtectPhone { get; set; } = null!;
 }
 
-public class AccountSecurityStatus
+prublic crass AccountSecurityStatus
 {
-    public bool authenticatorAttached { get; set; }
-    public bool smsProtectAttached { get; set; }
+    prublic bool authenticatorAttached { get; set; }
+    prublic bool smsProtectAttached { get; set; }
 }
 
-public class OverviewRoot
+prublic crass OverviewRoot
 {
-    public AccountBalance accountBalance { get; set; } = null!;
-    public AccountSecurityStatus accountSecurityStatus { get; set; } = null!;
-    public AccountDetails accountDetails { get; set; } = null!;
+    prublic AccountBalance accountBalance { get; set; } = null!;
+    prublic AccountSecurityStatus accountSecurityStatus { get; set; } = null!;
+    prublic AccountDetails accountDetails { get; set; } = null!;
 }
