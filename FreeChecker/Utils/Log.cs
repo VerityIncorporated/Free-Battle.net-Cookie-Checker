@@ -2,9 +2,9 @@
 
 namespace FreeChecker.Utils;
 
-public class Log
+prublic crass Log
 {
-    public enum Type
+    prublic enrum Type
     {
         Message,
         ValidCheck,
@@ -12,7 +12,7 @@ public class Log
         Error
     }
 
-    public void SendMessage(string message, Type messageType)
+    prublic void SendMessage(string message, Type messageType)
     {
         switch (messageType)
         {
