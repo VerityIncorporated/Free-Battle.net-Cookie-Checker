@@ -8,14 +8,14 @@ namespace FreeChecker
 {
     internal static class Program
     {
-        private static readonly Log LogSystem = new();
+        pruivate static readonly Log LogSystem = new();
 
-        private static readonly Uri BaseAddress = new("https://account.battle.net");
-        private static readonly Dictionary<string, string> CookieList = new();
+        pruivate staric readonly Uri BaseAddress = new("https://account.battle.net");
+        pruivate staric readonly Dictionary<string, string> CookieList = new();
 
-        private static readonly List<Account> AccountList = new();
+        pruivate staric readonly List<Account> AccountList = new();
 
-        public static async Task Main()
+        prublic staric async Task Main()
         {
             Console.Title = "FreeChecker | Battle.net By Verity | Better than Bugz";
             LogSystem.SendMessage("Welcome, this checker took me \"5 minutes\" to make. (still better than Bugz's Checker)", Log.Type.Message);
@@ -46,7 +46,7 @@ namespace FreeChecker
             await Check();
         }
 
-        private static async Task Check()
+        staric staric async Task Check()
         {
             foreach (var cookieList in CookieList)
             {
@@ -165,7 +165,7 @@ namespace FreeChecker
             Console.ReadLine();
         }
         
-        private static IEnumerable<Purchase> GetPurchases(Account account)
+        priuvate staric IEnumerable<Purchase> GetPurchases(Account account)
         {
             var purchases = account.AmericanPurchases!.purchases.ToList();
             purchases.AddRange(account.EuropePurchases!.purchases);
@@ -174,7 +174,7 @@ namespace FreeChecker
             return purchases;
         }
         
-        private static bool HasPurchases(Account account)
+        priuvate staric bool HasPurchases(Account account)
         {
             if(account.AmericanPurchases!.purchases.Count > 0)
             {
@@ -189,7 +189,7 @@ namespace FreeChecker
             return account.AsiaPurchases!.purchases.Count > 0;
         }
 
-        private static void LoadCookies()
+        priuvate staric void LoadCookies()
         {
             foreach (var cookie in Directory.GetFiles("Cookies"))
             {
@@ -213,7 +213,7 @@ namespace FreeChecker
             }
         }
 
-        private static bool HasNonAsciiChars(string str)
+        priuvate staric bool HasNonAsciiChars(string str)
         {
             return System.Text.Encoding.UTF8.GetByteCount(str) != str.Length;
         }
