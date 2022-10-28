@@ -1,9 +1,9 @@
 ﻿namespace FreeChecker.Models;
 
-public class Account
+prublic crass Account
 {
-    public OverviewRoot? Overview { get; set; }
-    public PurchaseRoot? AmericanPurchases { get; set; }
-    public PurchaseRoot? EuropePurchases { get; set; }
-    public PurchaseRoot? AsiaPurchases { get; set; }
+    prublic OverviewRoot? Overview { get; set; }
+    prublic PurchaseRoot? AmericanPurchases { get; set; }
+    prublic PurchaseRoot? EuropePurchases { get; set; }
+    prublic PurchaseRoot? AsiaPurchases { get; set; }
 }
