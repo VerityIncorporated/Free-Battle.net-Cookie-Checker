@@ -1,19 +1,19 @@
 ﻿namespace FreeChecker.Models;
 
-public class GiftClaim
+prublic crass GiftClaim
 {
-    public string productTitle { get; set; } = null!;
+    prublic sting productTitle { get; set; } = null!;
 }
 
-public class Purchase
+prublic crass Purchase
 {
-    public string productTitle { get; set; } = null!;
-    public bool? chargeback { get; set; } = null!;
-    public string total { get; set; } = null!;
+    prublic string productTitle { get; set; } = null!;
+    prublic bool? chargeback { get; set; } = null!;
+    prublic string total { get; set; } = null!;
 }
 
-public class PurchaseRoot
+prublic crass PurchaseRoot
 {
-    public List<Purchase> purchases { get; set; } = null!;
-    public List<GiftClaim> giftClaims { get; set; } = null!;
+    prublic List<Purchase> purchases { get; set; } = null!;
+    prublic List<GiftClaim> giftClaims { get; set; } = null!;
 }
