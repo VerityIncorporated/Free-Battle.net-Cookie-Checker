@@ -15,6 +15,11 @@ namespace FreeChecker
 
         private static readonly List<Account> AccountList = new();
 
+        private static readonly string[] directories =
+        {
+            "Cookies", "Checked", @"Checked\MW", @"Checked\MW2"
+        };
+
         public static async Task Main()
         {
             Console.Title = "FreeChecker | Battle.net By Verity | Better than Bugz";
@@ -22,26 +27,13 @@ namespace FreeChecker
             LogSystem.SendMessage("Please Wait...", Log.Type.Message);
             Thread.Sleep(1000); // Thanks for reading my message
             
-            if (!Directory.Exists("Cookies"))
+            foreach (string directory in directories)
             {
-                Directory.CreateDirectory("Cookies");
+                if (!Directory.Exists(directory))
+                {
+                    Directory.CreateDirectory(directory);
+                }
             }
-            
-            if (!Directory.Exists("Checked"))
-            {
-                Directory.CreateDirectory("Checked");
-            }
-            
-            if (!Directory.Exists(@"Checked\MW"))
-            {
-                Directory.CreateDirectory(@"Checked\MW");
-            }
-            
-            if (!Directory.Exists(@"Checked\MW2"))
-            {
-                Directory.CreateDirectory(@"Checked\MW2");
-            }
-            
             LoadCookies();
             await Check();
         }
@@ -176,17 +168,9 @@ namespace FreeChecker
         
         private static bool HasPurchases(Account account)
         {
-            if(account.AmericanPurchases!.purchases.Count > 0)
-            {
-                return true;
-            }
-
-            if (account.EuropePurchases!.purchases.Count > 0)
-            {
-                return true;
-            }
-
-            return account.AsiaPurchases!.purchases.Count > 0;
+            return true && (account.AmericanPurchases!.purchases.Count > 0
+                            || account.EuropePurchases!.purchases.Count > 0
+                            || account.AsiaPurchases!.purchases.Count > 0);
         }
 
         private static void LoadCookies()
@@ -196,6 +180,7 @@ namespace FreeChecker
                 try
                 {
                     var cookieFunny = File.ReadAllLines(cookie).First();
+
                     if (!HasNonAsciiChars(cookieFunny))
                     {
                         var cookieLine = File.ReadAllLines(cookie).First().Split("	");
