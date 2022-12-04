@@ -179,21 +179,19 @@ namespace FreeChecker
             {
                 try
                 {
-                    var cookieFunny = File.ReadAllLines(cookie).First();
-
-                    if (!HasNonAsciiChars(cookieFunny))
+                    var cookieFunny = File.ReadAllLines(cookie);
+                    
+                    foreach (var sex in cookieFunny)
                     {
-                        var cookieLine = File.ReadAllLines(cookie).First().Split("	");
-                        CookieList.Add(cookieFunny, cookieLine[6]);
-                    }
-                    else
-                    {
-                        File.Delete(cookie);
+                        if (!sex.Contains("	BA-tassadar	")) continue;
+                        if(HasNonAsciiChars(sex)) continue;
+                        var cookieLine = sex.Split("	")[6];
+                        CookieList.Add(cookie, cookieLine);
                     }
                 }
-                catch
+                catch(Exception e)
                 {
-                    File.Delete(cookie);
+                    Console.WriteLine(e.Message);
                 }
             }
         }
