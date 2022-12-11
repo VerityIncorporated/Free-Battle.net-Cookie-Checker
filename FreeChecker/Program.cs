@@ -183,10 +183,17 @@ namespace FreeChecker
                     
                     foreach (var sex in cookieFunny)
                     {
-                        if (!sex.Contains("	BA-tassadar	")) continue;
-                        if(HasNonAsciiChars(sex)) continue;
-                        var cookieLine = sex.Split("	")[6];
-                        CookieList.Add(cookie, cookieLine);
+                        if (sex.Contains("	BA-tassadar	"))
+                        {
+                             if(HasNonAsciiChars(sex)) continue;
+                             var cookieLine = sex.Split("	")[6];
+                             CookieList.Add(cookie, cookieLine);
+                        }
+                        else
+                        {
+                             if(HasNonAsciiChars(sex)) continue;
+                             CookieList.Add(cookie, sex);
+                        }
                     }
                 }
                 catch(Exception e)
